@@ -1,16 +1,18 @@
 {
     "m_Version": 20,
-    "AccuracyMin": 0.3499999940395355,
-    "AccuracyMax": 0.949999988079071,
-    "ThreatDistanceLimit": 1000.0,
+    "AccuracyMin": 0.85,
+    "AccuracyMax": 0.93,
+    "ThreatDistanceLimit": 600.0,
     "NoiseInvestigationDistanceLimit": 500.0,
     "MaxFlankingDistance": 200.0,
     "EnableFlankingOutsideCombat": 0,
     "DamageMultiplier": 1.0,
     "DamageReceivedMultiplier": 1.0,
-    "ShoryukenChance": 0.009999999776482582,
+    "ShoryukenChance": 0.10,
     "ShoryukenDamageMultiplier": 3.0,
-    "Admins": [],
+    "Admins": [
+        "76561198081075225"
+    ],
     "Vaulting": 1,
     "SniperProneDistanceThreshold": 0.0,
     "AggressionTimeout": 120.0,
@@ -22,7 +24,9 @@
     "MaxRecruitableAI": 1,
     "PreventClimb": [],
     "FormationScale": 1.0,
-    "PlayerFactions": [],
+    "PlayerFactions": [
+        "East"
+    ],
     "LogAIHitBy": 1,
     "LogAIKilled": 1,
     "EnableZombieVehicleAttackHandler": 0,
