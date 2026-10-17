@@ -1142,7 +1142,7 @@
         </children>
     </event>
     <event name="VehicleMotorbike">
-        <nominal>30</nominal>
+        <nominal>40</nominal>
         <min>5</min>
         <max>11</max>
         <lifetime>300</lifetime>
@@ -1155,13 +1155,13 @@
         <limit>mixed</limit>
         <active>1</active>
         <children>
-            <child lootmax="0" lootmin="0" max="6" min="4" type="Motorbike_01_Blue"/>
-            <child lootmax="0" lootmin="0" max="6" min="4" type="Motorbike_01_Red"/>
-            <child lootmax="0" lootmin="0" max="6" min="3" type="Motorbike_01_Yellow"/>
-            <child lootmax="0" lootmin="0" max="6" min="3" type="Motorbike_02_Blue"/>
-            <child lootmax="0" lootmin="0" max="6" min="3" type="Motorbike_02_Green"/>
-            <child lootmax="0" lootmin="0" max="6" min="4" type="Motorbike_02_Red"/>
-            <child lootmax="0" lootmin="0" max="6" min="3" type="Motorbike_02_Yellow"/>
+            <child lootmax="0" lootmin="0" max="7" min="4" type="Motorbike_01_Blue"/>
+            <child lootmax="0" lootmin="0" max="7" min="4" type="Motorbike_01_Red"/>
+            <child lootmax="0" lootmin="0" max="7" min="4" type="Motorbike_01_Yellow"/>
+            <child lootmax="0" lootmin="0" max="7" min="4" type="Motorbike_02_Blue"/>
+            <child lootmax="0" lootmin="0" max="7" min="4" type="Motorbike_02_Green"/>
+            <child lootmax="0" lootmin="0" max="7" min="4" type="Motorbike_02_Red"/>
+            <child lootmax="0" lootmin="0" max="7" min="4" type="Motorbike_02_Yellow"/>
         </children>
     </event>
     <event name="VehicleOffroad02">

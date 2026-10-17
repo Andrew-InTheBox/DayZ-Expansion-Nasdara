@@ -1,0 +1,10 @@
+{
+    "background_bounds": [
+        0,
+        16384,
+        0,
+        16384
+    ],
+    "calibrated": true,
+    "notes": "16384 x 16384 metre map size supplied by the server owner. Image is mapped to the full world square; landmark/pixel alignment of the rectangular source image has not been independently verified."
+}
