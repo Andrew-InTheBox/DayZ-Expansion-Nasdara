@@ -1,0 +1,67 @@
+# Keep Workshop metadata stubs so a fresh checkout can discover and sync mods.
+# Ignore all other downloaded payload beneath client and server-side mod folders.
+/@*/*
+!/@*/meta.cpp
+/_@*/*
+!/_@*/meta.cpp
+.env
+config/DataCache/cache.ch
+# KeyCard Rooms runtime cache/persistence; config.json remains tracked.
+/config/KeyCardSystem/data/*.dat
+dayz.gproj
+# Heatmap session output - runtime data written every 2 min by the _@Heatmap server mod
+config/Heatmap/
+*.exe
+*.RPT
+*.ADM
+*.log
+*.dll
+*.bisign
+*.pbo
+*.bin
+*.vdf
+*.mdmp
+*.ebo
+/battlefield
+/bliss
+/dta
+/keys
+/addons
+/mpmissions/Expansion.chernarusplus/storage_1/
+/appcache
+/logs
+sakhal/addons/
+/battleye
+/_CommonRedist
+.continueignore
+.vscode/
+__pycache__/
+.mypy_cache/
+custom_scripts/*/output/*
+!custom_scripts/*/output/.gitkeep
+/tmp
+config/ExpansionMod/Settings/SocialMediaSettings.json
+.tmp/
+
+# Stock single-player offline mission files that ship with the game - not part of
+# the server config, and include multi-MB areaflags.map binaries.
+/mpmissions/dayzOffline.chernarusplus/
+/mpmissions/dayzOffline.enoch/
+/mpmissions/dayzOffline.sakhal/
+
+# PermissionsFramework runtime data - per-player permission/records written live.
+/config/PermissionsFramework/Permissions/
+/config/PermissionsFramework/Players/
+
+# Steam install artifacts
+/steamapps/
+/steam_appid.txt
+
+# Exception: the custom Heatmap server mod is NOT on the workshop, so it can never
+# be re-downloaded or re-synced from Steam - git is the only backup. Track everything
+# in it (must come after the /_@*/*, *.pbo and *.bisign ignores above to override them).
+!/_@Heatmap/**
+
+# Custom KeyCard Rooms companion is also server-only and has no Workshop copy.
+!/_@KeyCardRoomsServer/**
+/custom_mod_sources/heatmap-inspect.*/
