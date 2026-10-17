@@ -9,6 +9,17 @@ Expansion additions:
 
 - `cfgeconomycore.xml` loads `expansion_ce/expansion_types.xml` and
   `expansion_ce/expansion_spawnabletypes.xml` from the Chernarus Expansion setup.
+- `cfgeconomycore.xml` also loads the Chernarus server's SNAFU Weapons, MMG,
+  and Airborne AI item XML files from `snafu/`, `db/mmg/`, and `db/airborne_ai/`.
+  These files contain item economy definitions and attachment rules, with no
+  Chernarus-specific positions. `start_autoMods.bat` discovers all `@` mod
+  folders and all `_@` server-side mod folders at startup.
+- The imported SNAFU, MMG, and Airborne AI `types` entries use Nasdara's
+  `Tier1`-`Tier3` loot progression. Items that used only Chernarus `Tier4`
+  now use `Tier3`; entries already using `Tier2` or `Tier3` keep those tiers.
+  Weapon and gear entries with a clear faction match use `MilitaryEast` or
+  `MilitaryWest`. Shared supplies retain `Military`, which Nasdara also uses.
+  Admin gear and other zero-nominal items remain zero-nominal.
 - `expansion/settings/MapSettings.json` keeps the existing map settings, with all
   Chernarus server markers removed.
 - `expansion/settings/SpawnSettings.json` disables Expansion spawn selection and
@@ -23,8 +34,5 @@ and register it in `cfgeconomycore.xml`.
 
 Expansion AI patrols, airdrops, traders, quests, custom objects, and trader zones
 also need Nasdara locations before they can be enabled. Expansion can generate
-its other settings on first server start. Configure the server to load mission
-template `expansion.nasdara` with the required Expansion mods.
-
-The sibling server folder currently contains only this mission. Server binaries,
-mod files, keys, and a `serverDZ.cfg` are still needed before it can launch.
+its other settings on first server start. `serverDZ.cfg` loads mission template
+`expansion.nasdara`.

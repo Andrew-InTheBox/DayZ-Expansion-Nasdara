@@ -19,7 +19,7 @@ if not defined ENABLE_WORKSHOP_UPDATES set "ENABLE_WORKSHOP_UPDATES=1"
 ::Name for the CMD window
 set "serverName=KRONJON-Nasdara-PvE-AI"
 ::Server Port
-set "serverPort=2402"
+set "serverPort=2302"
 ::Server config
 set "serverConfig=serverDZ.cfg"
 ::Server profile folder
@@ -69,15 +69,28 @@ if "%ENABLE_SERVER_UPDATE%"=="1" if "%UPDATE_ON_RESTART%"=="1" call :server_file
 if "%ENABLE_WORKSHOP_UPDATES%"=="1" if "%UPDATE_ON_RESTART%"=="1" call :update_mods
 call :sync_mod_keys
 
-:: Start with the Expansion stack. Other copied mods need Nasdara-specific review.
-set "mods=@CF;@DabsFramework;@DayZ-Expansion-Core;@DayZ-Expansion-Animations;@DayZ-Expansion-Licensed;@DayZ-Expansion-Vehicles;@DayZ-Expansion-Navigation;@DayZ-Expansion-Book;@DayZ-Expansion"
+:: Build client and server mod lists from their folder prefixes.
+setlocal EnableDelayedExpansion
+set "mods="
+set "serverMods="
+for /d %%D in (@*) do (
+  if defined mods (set "mods=!mods!;%%~D") else (set "mods=%%~D")
+)
+for /d %%D in (_@*) do (
+  if defined serverMods (set "serverMods=!serverMods!;%%~D") else (set "serverMods=%%~D")
+)
+endlocal & set "mods=%mods%" & set "serverMods=%serverMods%"
+set "serverModArg="
+if defined serverMods set serverModArg="-serverMod=%serverMods%"
 
 echo Server mod list: %mods%
+echo Server-side mod list: %serverMods%
 
 :: /wait = batch pauses until DayZServer_x64.exe exits (graceful shutdown)
 start "DayZ Server" /min /wait DayZServer_x64.exe ^
   -config=%serverConfig% ^
   "-mod=%mods%" ^
+  %serverModArg% ^
   -port=%serverPort% ^
   -profiles=%serverProfile% ^
   -cpuCount=%serverCPU% ^
@@ -92,7 +105,7 @@ if not exist "%SCRIPT_DIR%keys" mkdir "%SCRIPT_DIR%keys"
 setlocal EnableDelayedExpansion
 set /a KEY_COUNT=0
 set /a KEY_ERRORS=0
-for /d %%D in (@*) do (
+for /d %%D in (@* _@*) do (
   for /r "%%D" %%K in (*.bikey) do (
     copy /Y "%%~fK" "%SCRIPT_DIR%keys\%%~nxK" >nul
     if errorlevel 1 (
