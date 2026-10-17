@@ -55,3 +55,59 @@ checked using temporary outputs. Configuration-editing helpers were not run.
 The vehicle nominal/minimum report retains its original policy checks; its
 flags for zero vehicle values in `types.xml` do not establish a server fault
 (vehicles are also controlled by event definitions).
+
+## Nasdara AI patrol plots and HTML reports
+
+From the server root, using the Python venv above:
+
+```powershell
+python custom_scripts/ai_patrols/plot_ai_patrols.py --html
+python custom_scripts/ai_patrols/plot_ai_patrols.py --no-patrol-labels --output custom_scripts/ai_patrols/output/nasdara_ai_patrols.png
+python custom_scripts/ai_patrols/generate_ai_patrol_report.py
+```
+
+`--html` writes `custom_scripts/ai_patrols/output/ai_patrol_explorer.html`.
+Open that generated file, or use `custom_scripts/ai_patrols/ai_patrol_explorer.html`,
+which redirects to it. The generator uses `ai_patrol_explorer.template.html`;
+that template is not a standalone viewer. The generated viewer embeds both the
+patrol data and `assets/nasdara-map-background.png`, so it needs no separate data
+files or web server. Regenerate it after changing the patrol settings.
+The HTML embeds its data and background image and opens offline in a browser.
+Regenerate it after changing server settings; it is a configuration snapshot.
+Search and filter by behavior, spawn source, faction, or effective category.
+Select any definition, including unmapped ones, to inspect persistence, loadout,
+chance, AI count settings, raw JSON and effective inherited settings. The player
+count control previews category and global caps for 0–10 players; it does not
+change the server. Both PNG and HTML support `--exclude-behaviour`, and focus
+arguments (`--focus-region`, or `--focus-center` with optional `--focus-size`).
+Other inputs can be supplied with `--input`, `--ai-settings`, `--locations`,
+`--map-settings`, and `--background`. `--locations-only` shows roaming locations
+and no-go areas without patrols. The separate location plotter remains available.
+
+Interpret map markers as configuration data, not live bots:
+
+- Circles are world-coordinate waypoints or possible roaming starts. `ROAMING`
+  is not drawn as a fixed route through every listed waypoint.
+- Squares are potential building/area centers or event candidate sites from
+  the mission's `mapgrouppos.xml`, `cfgEffectArea.json`, and active event
+  definitions paired with `cfgeventspawns.xml`. Local object offsets are kept
+  in the details and are never plotted at the world origin. Building orientation
+  and relative offsets are not transformed into exact AI spawn positions.
+- The roster counts patrol definitions separately from mapped starts/anchors.
+  Map groups are an incomplete object inventory; dynamic events are not live
+  events. An unmapped definition is not proof that the class is absent in game.
+- Map bounds retain the supplied 16384 m world square. The rectangular raster's
+  exact landmark alignment remains unverified; shared bounds can be adjusted.
+
+The matrix report now groups by spawn source and behavior instead of name
+prefixes, includes persistence/chance, effective noise and respawn values with
+inheritance sources, mapped anchor counts, and load-balancing caps at 10 players.
+`RespawnTime: -1` means disabled; `-2` inherits the patrol global setting. Normal
+inherited settings such as noise use `-1`, including fallback to `AISettings`.
+No plotting/report command edits server configuration.
+
+Regression checks:
+
+```powershell
+python -m unittest discover -s custom_scripts/ai_patrols -p 'test_*.py'
+```

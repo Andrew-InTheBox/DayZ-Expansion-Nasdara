@@ -11,12 +11,21 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
+from ai_patrol_data import DEFAULT_AI, build_dataset, group_for, limits_at, read_json
+
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_INPUT = REPO_ROOT / "mpmissions/expansion.nasdara/expansion/settings/AIPatrolSettings.json"
 DEFAULT_OUTPUT = Path(__file__).resolve().parent / "output" / "ai_patrol_matrix_report.html"
 
 KEY_FIELDS = [
+    "LootDropOnDeath",
+    "Persist",
+    "SpawnSource",
+    "MappedAnchorCount",
+    "EffectiveCategory",
+    "EffectiveNoise",
+    "EffectiveRespawn",
     "Faction",
     "Behaviour",
     "Formation",
@@ -57,9 +66,17 @@ KEY_FIELDS = [
 ]
 
 MATRIX_FIELDS = [
+    "LootingBehaviour",
+    "LootDropOnDeath",
     "Name",
     "Group",
-    "Behaviour",
+    "SpawnSource",
+    "MappedAnchorCount",
+    "Persist",
+    "Chance",
+    "EffectiveCategory",
+    "EffectiveNoise",
+    "EffectiveRespawn",    "Behaviour",
     "Faction",
     "Loadout",
     "NumberOfAI",
@@ -93,15 +110,7 @@ def esc(value: Any) -> str:
 
 
 def patrol_group(patrol: dict[str, Any]) -> str:
-    name = patrol["Name"]
-    behaviour = patrol["Behaviour"]
-    if name.startswith(("Wreck-", "Contam-")) or name == "Contam-area-static":
-        return "Heli / police / contam"
-    if behaviour == "ROAMING":
-        return "Standard ROAMING"
-    if behaviour == "ROAMING_LOCAL":
-        return "ROAMING_LOCAL"
-    return "Regular multi-waypoint"
+    return group_for(patrol)
 
 
 def compact_counts(values: list[Any]) -> str:
@@ -128,16 +137,10 @@ def cell_value(patrol: dict[str, Any], field: str, group_name: str) -> Any:
 
 
 def group_summaries(patrols: list[dict[str, Any]]) -> list[tuple[str, list[dict[str, Any]]]]:
-    order = [
-        "Heli / police / contam",
-        "Standard ROAMING",
-        "ROAMING_LOCAL",
-        "Regular multi-waypoint",
-    ]
     by_group: dict[str, list[dict[str, Any]]] = collections.defaultdict(list)
     for patrol in patrols:
         by_group[patrol_group(patrol)].append(patrol)
-    return [(name, by_group[name]) for name in order if by_group[name]]
+    return sorted(by_group.items())
 
 
 def render_value_sets(patrols: list[dict[str, Any]]) -> str:
@@ -195,7 +198,7 @@ def render_matrix(groups: list[tuple[str, list[dict[str, Any]]]]) -> str:
     return f"<table><thead><tr>{headers}</tr></thead><tbody>{''.join(rows)}</tbody></table>"
 
 
-def render_report(input_path: Path, patrols: list[dict[str, Any]]) -> str:
+def render_report(input_path: Path, patrols: list[dict[str, Any]], context_html: str = "") -> str:
     groups = group_summaries(patrols)
     generated = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     group_cards = []
@@ -292,6 +295,7 @@ def render_report(input_path: Path, patrols: list[dict[str, Any]]) -> str:
     </div>
   </header>
   <main>
+    {context_html}
     <section>
       <h2>Patrol Matrix</h2>
       <div class="matrix">{render_matrix(groups)}</div>
@@ -313,14 +317,35 @@ def render_report(input_path: Path, patrols: list[dict[str, Any]]) -> str:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", type=Path, default=DEFAULT_INPUT)
+    parser.add_argument("--ai-settings", type=Path, default=DEFAULT_AI)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     args = parser.parse_args()
 
     with args.input.open(encoding="utf-8-sig") as handle:
         data = json.load(handle)
-    patrols = data["Patrols"]
+    dataset = build_dataset(data, read_json(args.ai_settings), args.input.resolve().parents[2])
+    patrols = []
+    for item in dataset["patrols"]:
+        patrol = dict(item["settings"])
+        patrol.update(SpawnSource=item["spawnSource"], MappedAnchorCount=len(item["points"]),
+                      EffectiveCategory=item["category"])
+        for key, field in [("NoiseInvestigationDistanceLimit", "EffectiveNoise"), ("RespawnTime", "EffectiveRespawn")]:
+            setting = item["effective"][key]
+            patrol[field] = f"{setting['value']} ({setting['source']}; raw {setting['raw']})"
+        patrols.append(patrol)
+    rows = []
+    for category, values in limits_at(dataset["categories"], 10).items():
+        caps = [v for v in values if v >= 0]
+        cap = min(caps) if caps else "Unlimited" if values else "No matching rule"
+        rows.append(f"<tr><td>{esc(category)}</td><td>{esc(cap)}</td></tr>")
+    context_html = ("<section><h2>Spawn sources and limits</h2>"
+                    "<p>Definition counts are not active patrol counts. Buildings may host multiple instances; "
+                    "event anchors are possible sites. Object-relative offsets are not world coordinates. "
+                    "Missing map anchors do not prove a class is absent in game.</p>"
+                    "<h3>Load-balancing caps at 10 players</h3><table><thead><tr><th>Category</th><th>Cap</th></tr></thead>"
+                    f"<tbody>{''.join(rows)}</tbody></table></section>")
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(render_report(args.input, patrols), encoding="utf-8")
+    args.output.write_text(render_report(args.input, patrols, context_html), encoding="utf-8")
     print(f"Wrote {args.output} ({len(patrols)} patrols)")
 
 
