@@ -27,7 +27,7 @@ config/Heatmap/
 /dta
 /keys
 /addons
-/mpmissions/Expansion.chernarusplus/storage_1/
+/mpmissions/*/storage_*/
 /appcache
 /logs
 sakhal/addons/

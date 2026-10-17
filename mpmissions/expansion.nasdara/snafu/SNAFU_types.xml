@@ -374,7 +374,7 @@
         <usage name="Military"/>
         <value name="Tier3"/>
     </type>
-    <type name="snafu_ammo_5_7x28mm">
+    <type name="SNAFU_Ammo_5_7x28mm">
         <nominal>120</nominal>
         <restock>0</restock>
         <lifetime>7200</lifetime>
@@ -548,7 +548,7 @@
         <usage name="MilitaryWest"/>
         <value name="Tier3"/>
     </type>
-    <type name="SNAFUGevar_Suppressor">
+    <type name="SNAFUGevar_Suppressor_Green">
         <nominal>3</nominal>
         <restock>1800</restock>
         <lifetime>7200</lifetime>

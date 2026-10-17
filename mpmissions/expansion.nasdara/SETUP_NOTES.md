@@ -20,6 +20,9 @@ Expansion additions:
   Weapon and gear entries with a clear faction match use `MilitaryEast` or
   `MilitaryWest`. Shared supplies retain `Military`, which Nasdara also uses.
   Admin gear and other zero-nominal items remain zero-nominal.
+- The imported SNAFU file used a nonexistent generic `SNAFUGevar_Suppressor`
+  class. It now uses the installed mod's `SNAFUGevar_Suppressor_Green`
+  class in both the loot definition and rifle attachment rule.
 - `expansion/settings/MapSettings.json` keeps the existing map settings, with all
   Chernarus server markers removed.
 - `expansion/settings/SpawnSettings.json` disables Expansion spawn selection and

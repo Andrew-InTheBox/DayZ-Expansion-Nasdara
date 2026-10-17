@@ -1,0 +1,453 @@
+{
+    "Connections": [
+        {
+            "Name": "Main",
+            "ContextURL": "",
+            "Address": "",
+            "FilterGUID": "",
+            "FilterRole": "",
+            "Types": [
+                {
+                    "Name": "COTModule",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMWebhookModule",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMPlayerModule",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMPlayerModuleSet",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMPlayerModuleVehicle",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMPlayerModuleTeleport",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMPlayerModuleInventory",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMPlayerModulePF",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMPlayerModuleKick",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMPlayerModuleMessage",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMPlayerModuleNotif",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMPlayerModuleBan",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMPlayerModuleDisease",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMObjectSpawnerModule",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMObjectSpawnerModuleDelete",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMObjectSpawnerModuleVector",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMObjectSpawnerModulePlayer",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMESPModule",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMESPModuleLog",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMESPModulePosition",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMESPModuleOrientation",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMESPModuleHealth",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMESPModuleDelete",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMESPModuleBB_Build",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMESPModuleBB_Dismantle",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMESPModuleBB_Repair",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMESPModuleVehicle_Unstuck",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMESPModuleRepair",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMESPModuleVehicle_Refuel",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMESPModuleMakeItemSet",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMESPModuleDuplicateAll",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMESPModuleDeleteAll",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMESPModuleMoveToCursor",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMTeleportModule",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMTeleportModuleVector",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMTeleportModuleLocation",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMCameraModule",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMCameraModuleEnter",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMCameraModuleLeave",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMWeatherModule",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMWeatherModuleSetWeather",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMWeatherModuleSetTime",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMWeatherModuleUsePreset",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMWeatherModuleCreatePreset",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMWeatherModuleUpdatePreset",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMWeatherModuleRemovePreset",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMWeatherModuleDynamicWeather",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMLoadoutModule",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMLoadoutModuleCreate",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMLoadoutModuleDelete",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMLoadoutModuleBackup",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMLoadoutModuleSpawn",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMCompensationsModule",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMCompensationsModuleSpawn",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMCompensationsModuleDelete",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMMapModule",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMMapEditorModule",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMMapEditorModuleSpawn",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMMapEditorModuleTransform",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMMapEditorModuleDelete",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMMapEditorModuleClear",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMAntiCheatModule",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMAntiCheatModuleDetection",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMAntiCheatModuleAction",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMVehiclesModule",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMVehiclesModuleDelete",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMVehiclesModuleTeleport",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMVehiclesModuleRepair",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMVehiclesModuleRefuel",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMVehiclesModuleUnstuck",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMVehiclesModuleCover",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMVehiclesModuleLock",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMVehiclesModuleUnpair",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMCommandModule",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMBanModule",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMBanModuleBan",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMBanModuleUnban",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMBanModuleEditBan",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMRoleManagerModule",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMRoleManagerModuleCreateRole",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMRoleManagerModuleDeleteRole",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMRoleManagerModuleSetRolePermissions",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMWebhookCOTModule",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMWebhookCOTModuleURL",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMWebhookCOTModuleURLSensitive",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMWebhookCOTModuleType",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMWebhookCOTModuleTypeSensitive",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMLootAnalysisModule",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMLootAnalysisModuleItemScan",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMLootAnalysisModuleDistribution",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMLootAnalysisModuleDelete",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMEventsModule",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMEventsModuleTeleport",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMEventsModuleDelete",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMEventsModuleSpawn",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMServerStatsModule",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMActionHistoryModule",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMActionHistoryModuleUndo",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "JMActionHistoryModuleRedo",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "ServerStartup",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "ServerShutdown",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "PlayerJoin",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "PlayerLeave",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "PlayerDeath",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "PlayerDeathNoPos",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "PlayerDamage",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "AdminActive",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "TerritoryDeployed",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "ItemDeployed",
+                    "Enabled": 0
+                },
+                {
+                    "Name": "PlayerCount",
+                    "Enabled": 0
+                }
+            ]
+        }
+    ]
+}
