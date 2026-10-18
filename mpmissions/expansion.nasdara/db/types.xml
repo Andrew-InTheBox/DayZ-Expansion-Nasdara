@@ -4682,10 +4682,10 @@
         <category name="tools"/>
     </type>
     <type name="CanisterGasoline">
-        <nominal>33</nominal>
+        <nominal>45</nominal>
         <lifetime>28800</lifetime>
         <restock>0</restock>
-        <min>20</min>
+        <min>38</min>
         <quantmin>30</quantmin>
         <quantmax>70</quantmax>
         <cost>100</cost>
