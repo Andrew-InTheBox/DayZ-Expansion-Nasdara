@@ -2,8 +2,10 @@
 
 This mission starts from Bohemia's `dayzOffline.nasdara` files. All vanilla Nasdara
 economy, spawn, event, environment, underground, and map data remains in place.
-The original Nasdara `init.c` also remains in place, including its starter clothing
-and April 30 date reset.
+The Nasdara `init.c` retains its starter clothing, but its April 30 date reset
+was removed. `serverDZ.cfg` sets the initial date to August 1, 2020, 09:30
+and enables saved time on later boots. Existing saved time takes precedence
+over the initial date until that saved clock is reset.
 
 Expansion additions:
 

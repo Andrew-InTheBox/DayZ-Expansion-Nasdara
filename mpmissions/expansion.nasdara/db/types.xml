@@ -7759,10 +7759,10 @@
         <usage name="Military"/>
     </type>
     <type name="Figs">
-        <nominal>0</nominal>
+        <nominal>50</nominal>
         <lifetime>900</lifetime>
         <restock>0</restock>
-        <min>0</min>
+        <min>40</min>
         <quantmin>-1</quantmin>
         <quantmax>-1</quantmax>
         <cost>100</cost>
