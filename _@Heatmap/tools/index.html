@@ -2,6 +2,8 @@
 <html>
 
 <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DayZ Heatmap</title>
 </head>
 
@@ -11,10 +13,13 @@
 #mapImage {
   margin: auto;
   width: 1000px;
-  height: 1000px;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
   background-size: 100% 100%;
+  background-repeat: no-repeat;
   outline: black 3px solid;
 }
+#mapCanvas { display: block; width: 100%; height: 100%; }
 
 html {
   text-align: center;
@@ -53,7 +58,8 @@ html {
 
 <p>
 Select map:
-<select name="mapSelect", id="mapSelect", onchange="changeMap()">
+<select name="mapSelect" id="mapSelect" onchange="changeMap()">
+<option value="Nasdara" selected>Nasdara</option>
 <option value="Chernarus">Chernarus</option>
 <option value="Enoch">Livonia</option>
 <option value="Esseker">Esseker</option>
@@ -62,6 +68,7 @@ Select map:
 <option value="Local Map">Local Map</option>
 </select>
 </p>
+<p id="mapInfo" aria-live="polite"></p>
 
 <p>
 Load session file:
@@ -120,6 +127,7 @@ Time:
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 <script>
 var mapSize = new Map();
+mapSize.set("Nasdara", 16384);
 mapSize.set("Chernarus", 15360);
 mapSize.set("Enoch", 12800);
 mapSize.set("Esseker", 12800);
@@ -127,6 +135,8 @@ mapSize.set("DeerIsle", 16384);
 mapSize.set("Hashima", 5200);
 
 var mapImage = new Map();
+// Resolve from tools/ to the shared server asset; works when opened as a local file.
+mapImage.set("Nasdara", "../../custom_scripts/assets/nasdara-map-background.png");
 mapImage.set("Chernarus", "https://github.com/BohemiaInteractive/DayZ-Central-Economy/raw/master/CETool/ChernarusPlus/map.png");
 mapImage.set("Enoch", "https://github.com/BohemiaInteractive/DayZ-Central-Economy/raw/master/CETool/Enoch/map.png");
 mapImage.set("Esseker", "https://github.com/InclementDab/Esseker-Server/raw/main/Central%20Economy%20Tool/map.png");
@@ -233,14 +243,26 @@ function changeMap() {
     let url = mapImage.get(text);
 
     document.getElementById("mapImage").style.backgroundImage = "url('"+url+"')";
+    const image = new Image();
+    image.onerror = function() {
+      if (mapSelect.value === text) {
+        document.getElementById("mapInfo").textContent = "Background could not be loaded: " + url;
+      }
+    };
+    image.src = url;
   }
   else
   {
     loadLocalMap();
 
-     let size = prompt("Size of the map", "12800");
-     mapSize.set("Local Map", parseInt(size));
+     let size = Number(prompt("Size of the map in meters", "16384"));
+     if (Number.isFinite(size) && size > 0) mapSize.set("Local Map", size);
   }
+  const size = mapSize.get(value);
+  document.getElementById("mapInfo").textContent = value === "Nasdara"
+    ? "Nasdara: X/Z 0–16,384 m. North (increasing Z) is up. The full PNG fills the square world bounds; image and tracks share the same scale."
+    : value + ": " + (size || "Unknown") + " × " + (size || "Unknown") + " m";
+  redrawHeatmap();
 }
 
 function loadLocalMap() {
