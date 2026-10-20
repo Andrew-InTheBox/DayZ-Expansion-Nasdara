@@ -31,6 +31,13 @@ Expansion additions:
   its starter gear, leaving Nasdara's vanilla spawn points and `init.c` loadout
   in control. Its Chernarus spawn locations have been removed.
 
+- `expansion/settings/AIPatrolSettings.json` targets Nasdara's Mi-24, Mi-8,
+  and Chinook dynamic helicopter wrecks and both police UAZ wreck variants.
+  All five wreck patrols use `Chance: 1.0`; helicopter entries retain the
+  existing helicopter settings, while police wreck entries copy the city
+  police station settings (including `PoliceLoadout` and `Police.json`).
+  Police station patrols remain disabled.
+
 No Expansion vehicle events are registered yet. The Chernarus events use fixed
 spawn positions, and copying them would place vehicles at unrelated Nasdara
 coordinates. To add them, define Nasdara positions in `cfgeventspawns.xml`,
