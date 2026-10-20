@@ -4,10 +4,10 @@
     ],
     "NameRestrictions": {},
     "Stats": {
-        "TotalPlaytimeSec": 46,
-        "SessionCount": 1,
+        "TotalPlaytimeSec": 1191,
+        "SessionCount": 2,
         "FirstSeenUnix": 1792282493,
-        "LastSeenUnix": 1792282540,
+        "LastSeenUnix": 1792538794,
         "Deaths": 0,
         "LongestLifeSec": 0,
         "CurrentLifeStartUnix": 1792282493

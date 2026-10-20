@@ -2,7 +2,7 @@
     "m_Version": 20,
     "AccuracyMin": 0.85,
     "AccuracyMax": 0.93,
-    "ThreatDistanceLimit": 600.0,
+    "ThreatDistanceLimit": 500.0,
     "NoiseInvestigationDistanceLimit": 500.0,
     "MaxFlankingDistance": 200.0,
     "EnableFlankingOutsideCombat": 0,
