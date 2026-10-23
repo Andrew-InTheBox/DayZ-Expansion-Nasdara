@@ -11,7 +11,7 @@
         <cost>100</cost>
         <flags count_in_hoarder="0" count_in_player="0" count_in_map="1" count_in_cargo="0" crafted="0" deloot="0"/>
         <category name="weapons"/>
-        <usage name="MilitaryEast"/>
+        <usage name="MilitaryWest"/>
         <value name="Tier3"/>
     </type>
     <type name="SNAFU_AKTrijicon_Docter">
@@ -26,6 +26,7 @@
         <category name="weapons"/>
         <usage name="MilitaryEast"/>
         <usage name="Police"/>
+        <value name="Tier2"/>
         <value name="Tier3"/>
     </type>
     <type name="SNAFU_MTrijicon_Docter">
@@ -38,15 +39,16 @@
         <cost>100</cost>
         <flags count_in_hoarder="0" count_in_player="0" count_in_map="1" count_in_cargo="0" crafted="0" deloot="0"/>
         <category name="weapons"/>
-        <usage name="MilitaryWest"/>
+        <usage name="MilitaryEast"/>
         <usage name="Police"/>
+        <value name="Tier2"/>
         <value name="Tier3"/>
     </type>
     <type name="SNAFU_Trijicon_Docter">
-        <nominal>5</nominal>
+        <nominal>3</nominal>
         <restock>1800</restock>
         <lifetime>7200</lifetime>
-        <min>2</min>
+        <min>1</min>
         <quantmin>-1</quantmin>
         <quantmax>-1</quantmax>
         <cost>100</cost>
@@ -54,6 +56,7 @@
         <category name="weapons"/>
         <usage name="MilitaryWest"/>
         <usage name="Police"/>
+        <value name="Tier2"/>
         <value name="Tier3"/>
     </type>
     <type name="SNAFU_Ammo_45_70mm">
@@ -343,6 +346,7 @@
         <flags count_in_hoarder="0" count_in_player="0" count_in_map="1" count_in_cargo="0" crafted="0" deloot="0"/>
         <category name="weapons"/>
         <usage name="Hunting"/>
+        <usage name="MilitaryWest"/>
         <value name="Tier2"/>
         <value name="Tier3"/>
     </type>
@@ -357,6 +361,7 @@
         <flags count_in_hoarder="0" count_in_player="0" count_in_map="1" count_in_cargo="0" crafted="0" deloot="0"/>
         <category name="weapons"/>
         <usage name="Hunting"/>
+        <usage name="MilitaryWest"/>
         <value name="Tier2"/>
         <value name="Tier3"/>
     </type>
@@ -385,7 +390,7 @@
         <flags count_in_hoarder="0" count_in_player="0" count_in_map="1" count_in_cargo="0" crafted="0" deloot="0"/>
         <category name="weapons"/>
         <usage name="Police"/>
-        <usage name="MilitaryWest"/>
+        <usage name="Military"/>
         <value name="Tier2"/>
         <value name="Tier3"/>
     </type>
