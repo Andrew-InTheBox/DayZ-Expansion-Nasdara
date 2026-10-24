@@ -4682,10 +4682,10 @@
         <category name="tools"/>
     </type>
     <type name="CanisterGasoline">
-        <nominal>60</nominal>
+        <nominal>70</nominal>
         <lifetime>28800</lifetime>
         <restock>0</restock>
-        <min>55</min>
+        <min>63</min>
         <quantmin>30</quantmin>
         <quantmax>70</quantmax>
         <cost>100</cost>
@@ -22527,10 +22527,10 @@
         <category name="food"/>
     </type>
     <type name="SparkPlug">
-        <nominal>75</nominal>
+        <nominal>95</nominal>
         <lifetime>14400</lifetime>
         <restock>0</restock>
-        <min>60</min>
+        <min>85</min>
         <quantmin>-1</quantmin>
         <quantmax>-1</quantmax>
         <cost>100</cost>
