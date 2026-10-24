@@ -684,17 +684,6 @@
             "Enabled": 1
         },
         {
-            "Name": "Local_61 (Qalat-e Lut)",
-            "Position": [
-                14848.7666015625,
-                0.0,
-                7811.970703125
-            ],
-            "Radius": 100.0,
-            "Type": "Ruin",
-            "Enabled": 1
-        },
-        {
             "Name": "Local_62 (Didban Ghar)",
             "Position": [
                 3140.132080078125,
