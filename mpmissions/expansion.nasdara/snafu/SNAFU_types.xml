@@ -554,10 +554,10 @@
         <value name="Tier3"/>
     </type>
     <type name="SNAFUGevar_Suppressor_Green">
-        <nominal>3</nominal>
+        <nominal>4</nominal>
         <restock>1800</restock>
         <lifetime>7200</lifetime>
-        <min>1</min>
+        <min>2</min>
         <quantmin>-1</quantmin>
         <quantmax>-1</quantmax>
         <cost>100</cost>
