@@ -1432,17 +1432,6 @@
             "Enabled": 1
         },
         {
-            "Name": "Local_116 (Fostkova Mehran Tunnel)",
-            "Position": [
-                5425.02490234375,
-                0.0,
-                5606.2119140625
-            ],
-            "Radius": 100.0,
-            "Type": "Local",
-            "Enabled": 1
-        },
-        {
             "Name": "Village_117 (Varzaneh)",
             "Position": [
                 13397.0263671875,

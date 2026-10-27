@@ -552,6 +552,7 @@
         <category name="weapons"/>
         <usage name="MilitaryWest"/>
         <value name="Tier3"/>
+        <value name="Unique"/>
     </type>
     <type name="SNAFUGevar_Suppressor_Green">
         <nominal>4</nominal>
