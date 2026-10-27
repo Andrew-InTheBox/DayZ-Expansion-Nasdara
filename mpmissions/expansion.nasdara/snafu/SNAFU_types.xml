@@ -99,10 +99,10 @@
         <value name="Tier3"/>
     </type>
     <type name="SNAFU_Tango6T_Black">
-        <nominal>0</nominal>
+        <nominal>5</nominal>
         <restock>1800</restock>
         <lifetime>7200</lifetime>
-        <min>0</min>
+        <min>3</min>
         <quantmin>-1</quantmin>
         <quantmax>-1</quantmax>
         <cost>100</cost>
@@ -234,7 +234,7 @@
         <nominal>8</nominal>
         <restock>0</restock>
         <lifetime>7200</lifetime>
-        <min>4</min>
+        <min>5</min>
         <quantmin>-1</quantmin>
         <quantmax>-1</quantmax>
         <cost>100</cost>
