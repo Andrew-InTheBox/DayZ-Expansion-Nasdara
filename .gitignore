@@ -53,6 +53,9 @@ config/ExpansionMod/Settings/SocialMediaSettings.json
 /config/PermissionsFramework/Permissions/
 /config/PermissionsFramework/Players/
 
+# Community Online Tools anticheat flags - runtime data written live by the server.
+/config/CommunityOnlineToolsAntiCheatflags.json
+
 # Steam install artifacts
 /steamapps/
 /steam_appid.txt
