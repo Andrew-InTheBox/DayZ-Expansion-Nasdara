@@ -931,12 +931,12 @@
         <usage name="Village"/>
     </type>
     <type name="Ammo_308Win">
-        <nominal>60</nominal>
+        <nominal>80</nominal>
         <lifetime>14400</lifetime>
         <restock>180</restock>
-        <min>55</min>
+        <min>70</min>
         <quantmin>30</quantmin>
-        <quantmax>45</quantmax>
+        <quantmax>50</quantmax>
         <cost>100</cost>
         <flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0"/>
         <category name="weapons"/>
@@ -1106,12 +1106,12 @@
         <usage name="MilitaryEast"/>
     </type>
     <type name="Ammo_556x45">
-        <nominal>50</nominal>
+        <nominal>65</nominal>
         <lifetime>14400</lifetime>
         <restock>0</restock>
-        <min>44</min>
-        <quantmin>10</quantmin>
-        <quantmax>40</quantmax>
+        <min>55</min>
+        <quantmin>40</quantmin>
+        <quantmax>60</quantmax>
         <cost>100</cost>
         <flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0"/>
         <category name="weapons"/>
@@ -1221,12 +1221,12 @@
         <usage name="Village"/>
     </type>
     <type name="Ammo_9x39">
-        <nominal>21</nominal>
+        <nominal>30</nominal>
         <lifetime>28800</lifetime>
         <restock>0</restock>
-        <min>14</min>
-        <quantmin>10</quantmin>
-        <quantmax>30</quantmax>
+        <min>20</min>
+        <quantmin>30</quantmin>
+        <quantmax>50</quantmax>
         <cost>100</cost>
         <flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0"/>
         <category name="weapons"/>
