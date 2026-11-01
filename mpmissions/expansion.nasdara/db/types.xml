@@ -4686,7 +4686,7 @@
         <lifetime>28800</lifetime>
         <restock>0</restock>
         <min>63</min>
-        <quantmin>30</quantmin>
+        <quantmin>40</quantmin>
         <quantmax>70</quantmax>
         <cost>100</cost>
         <flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0"/>
@@ -4860,7 +4860,7 @@
         <nominal>40</nominal>
         <lifetime>28800</lifetime>
         <restock>360</restock>
-        <min>26</min>
+        <min>30</min>
         <quantmin>20</quantmin>
         <quantmax>100</quantmax>
         <cost>100</cost>
@@ -22527,10 +22527,10 @@
         <category name="food"/>
     </type>
     <type name="SparkPlug">
-        <nominal>95</nominal>
+        <nominal>105</nominal>
         <lifetime>14400</lifetime>
         <restock>0</restock>
-        <min>85</min>
+        <min>95</min>
         <quantmin>-1</quantmin>
         <quantmax>-1</quantmax>
         <cost>100</cost>
@@ -24767,10 +24767,10 @@
         <category name="tools"/>
     </type>
     <type name="TruckBattery">
-        <nominal>13</nominal>
+        <nominal>35</nominal>
         <lifetime>28800</lifetime>
         <restock>360</restock>
-        <min>6</min>
+        <min>25</min>
         <quantmin>20</quantmin>
         <quantmax>100</quantmax>
         <cost>100</cost>
