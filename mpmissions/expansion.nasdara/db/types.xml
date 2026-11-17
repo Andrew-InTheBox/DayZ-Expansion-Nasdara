@@ -931,10 +931,10 @@
         <usage name="Village"/>
     </type>
     <type name="Ammo_308Win">
-        <nominal>80</nominal>
+        <nominal>95</nominal>
         <lifetime>14400</lifetime>
         <restock>180</restock>
-        <min>70</min>
+        <min>85</min>
         <quantmin>30</quantmin>
         <quantmax>50</quantmax>
         <cost>100</cost>
@@ -945,10 +945,10 @@
         <usage name="Hunting"/>
     </type>
     <type name="Ammo_308WinTracer">
-        <nominal>40</nominal>
+        <nominal>50</nominal>
         <lifetime>28800</lifetime>
         <restock>0</restock>
-        <min>35</min>
+        <min>42</min>
         <quantmin>30</quantmin>
         <quantmax>45</quantmax>
         <cost>100</cost>
