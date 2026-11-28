@@ -829,10 +829,10 @@
         <value name="Tier3"/>
     </type>
     <type name="AmmoBox_9x19_25rnd">
-        <nominal>37</nominal>
+        <nominal>43</nominal>
         <lifetime>28800</lifetime>
         <restock>0</restock>
-        <min>24</min>
+        <min>38</min>
         <quantmin>-1</quantmin>
         <quantmax>-1</quantmax>
         <cost>100</cost>
@@ -984,8 +984,8 @@
         <lifetime>14400</lifetime>
         <restock>0</restock>
         <min>103</min>
-        <quantmin>30</quantmin>
-        <quantmax>40</quantmax>
+        <quantmin>40</quantmin>
+        <quantmax>60</quantmax>
         <cost>100</cost>
         <flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0"/>
         <category name="weapons"/>
@@ -1212,13 +1212,14 @@
         <lifetime>14400</lifetime>
         <restock>0</restock>
         <min>92</min>
-        <quantmin>30</quantmin>
-        <quantmax>45</quantmax>
+        <quantmin>40</quantmin>
+        <quantmax>60</quantmax>
         <cost>100</cost>
         <flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0"/>
         <category name="weapons"/>
         <tag name="shelves"/>
         <usage name="Town"/>
+        <usage name="Police"/>
         <usage name="Village"/>
     </type>
     <type name="Ammo_9x39">
@@ -5127,10 +5128,10 @@
         <usage name="Historical"/>
     </type>
     <type name="CharcoalTablets">
-        <nominal>90</nominal>
+        <nominal>120</nominal>
         <lifetime>28800</lifetime>
         <restock>80</restock>
-        <min>8</min>
+        <min>100</min>
         <quantmin>10</quantmin>
         <quantmax>50</quantmax>
         <cost>100</cost>
